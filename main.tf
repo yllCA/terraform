@@ -57,12 +57,6 @@ resource "azurerm_storage_account" "storage_account" {
 
   tags                     = var.tags
 
-  network_rules {
-    default_action             = (length(var.ip_rules) + length(var.virtual_network_subnet_ids)) > 0 ? "Deny" : var.default_action
-    ip_rules                   = var.ip_rules
-    virtual_network_subnet_ids = var.virtual_network_subnet_ids
-  }
-
   identity {
     type = "SystemAssigned"
   }
