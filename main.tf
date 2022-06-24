@@ -46,7 +46,7 @@ resource "azurerm_storage_account" "storage_account" {
     default_action             = "Allow"
     ip_rules                   = ["0.0.0.0"]
     virtual_network_subnet_ids = [azurerm_subnet.example.id]
-    bypass                     = ["Metrics"]
+    bypass = ["Metrics"]
   }
 
   blob_properties {
@@ -55,7 +55,7 @@ resource "azurerm_storage_account" "storage_account" {
     }
   }
 
-  tags                     = var.tags
+  tags                     = var.tags'
 
   identity {
     type = "SystemAssigned"
